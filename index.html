@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <meta name="description" content="Task attempt">
+    <meta name="author" content="Aidan Mitchell">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body>
+    <table class="table" border="1">
+      <thead>
+        <tr>
+          <th><h3>APIs</h3></th>
+          <th><h3>API Descriptions</h3></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr id="countryInfo">
+          <td>Country Info API</td>
+          <td>
+            Country info
+            <br><br><br>
+            Please enter Country and language.
+            <select id="selCountry">
+                <option value="GB">Great Britain</option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option>
+                <option value="US">USA</option>
+            </select>
+    
+            <select id="selLanguage">
+                <option value="en">English</option>
+                <option value="fr">Francais</option>
+                <option value="de">Deutsche</option>
+            </select>
+           
+          </td>
+          <td><button class="btn btn-primary" id="btnRun1">Submit</button></td>
+        </tr>
+
+        <tr id="timezone">
+          <td>Timezone API</td>
+          <td>
+            The timezone based on the given parameters
+            <br>
+            <br>
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude">
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="Longitude">
+          </td>
+          <td><button class="btn btn-primary" id="btnRun2">Submit</button></td>
+        </tr>
+
+        <tr id="third-api">
+          <td>3rd API</td>
+          <td>
+            Ocean API
+            <br><br><br>
+            Please input parameters:
+            <br>
+            <br>
+            <label for="oceanLatitude">Latitude:</label>
+            <input type="text" id="oceanLatitude" name="latitude">
+            <label for="oceanlongitude">Longitude:</label>
+            <input type="text" id="oceanLongitude" name="Longitude">
+          </td>
+          <td><button class="btn btn-primary" id="btnRun3">Submit</button></td>
+        </tr>
+
+        <tr>
+          <td colspan="1">
+          <p>Continent:</p>
+          <span id="txtContinent"></span>
+          <p>Capital:</p>
+          <span id="txtCapital"></span>
+          <p>Languages:<p>
+          <span id="txtLanguages"></span>
+          <p>Population:</p>
+          <span id="txtPopulation"></span>
+          <p>Area:</p>
+          <span id="txtArea"></span>
+        </td> 
+
+          <td colspan="1">
+            <p>Country name:</p>
+            <span id="txtCountry"></span>
+            <p>Timezone ID</p>
+            <span id="txtTimezoneId"></span>
+            <p>GMT Offset</p>
+            <span id="txtGMTOffset"></span>
+            <p>DST Offset</p>
+            <span id="txtDSTOffset"></span>
+            <p>Time:</p>
+            <span id="txtTime"></span>
+            <p>Sunrise:</p>
+            <span id="txtSunrise"></span>
+            <p>Sunset:</p>
+            <span id="txtSunset"></span>
+          </td>
+
+          <td colspan="1">
+            <p>Ocean:</p>
+            <span id="txtOcean"></span>
+            <p>Name of Area in ocean</p>
+            <span id="txtName"></span>
+            <p>Distance to coast in km:</p>
+            <span id="txtDistance"></span>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
