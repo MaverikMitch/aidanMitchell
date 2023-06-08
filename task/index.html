@@ -20,25 +20,14 @@
       </thead>
       <tbody>
 
-        <tr id="countryInfo">
-          <td>Country Info API</td>
+        <tr id="oceanInfo">
+          <td>Ocean Info API</td>
           <td>
-            Country info
+            Ocean info
             <br><br><br>
-            Please enter Country and language.
-            <select id="selCountry">
-                <option value="GB">Great Britain</option>
-                <option value="FR">France</option>
-                <option value="DE">Germany</option>
-                <option value="US">USA</option>
-            </select>
-    
-            <select id="selLanguage">
-                <option value="en">English</option>
-                <option value="fr">Francais</option>
-                <option value="de">Deutsche</option>
-            </select>
-           
+            Please enter Latitude and Longitude.
+            <input type="text" id="txtLatitude" name ="Latitude">
+            <input type="text" id="txtLongitude" name ="Longitude">
           </td>
           <td><button class="btn btn-primary" id="btnRun1">Submit</button></td>
         </tr>
@@ -73,17 +62,10 @@
 
         <tr>
           <td colspan="1">
-          <p>Continent:</p>
-          <span id="txtContinent"></span>
-          <p>Capital:</p>
-          <span id="txtCapital"></span>
-          <p>Languages:<p>
-          <span id="txtLanguages"></span>
-          <p>Population:</p>
-          <span id="txtPopulation"></span>
-          <p>Area:</p>
-          <span id="txtArea"></span>
-        </td> 
+            <p>Ocean:</p>
+            <span id="txtOcean"></span>
+          </td>
+          
 
           <td colspan="1">
             <p>Country name:</p>

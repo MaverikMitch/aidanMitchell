@@ -1,32 +1,25 @@
 $('#btnRun1').click(function() {
-
     $.ajax({
         url: "php/api1.php",
         type: 'POST',
         dataType: 'json',
         data: {
-        country: $('#selCountry').val(),
-        lang: $('#selLanguage').val()
-    },
-    success: function(result) {
-
-        console.log(JSON.stringify(result));
-
-        if (result.status.name == "ok") {
-                
-            $('#txtContinent').html(result['data'][0]['continent']);
-            $('#txtCapital').html(result['data'][0]['capital']);
-            $('#txtLanguages').html(result['data'][0]['languages']);
-            $('#txtPopulation').html(result['data'][0]['population']);
-            $('#txtArea').html(result['data'][0]['areaInSqKm']);
-
+            latitude: $('#txtLatitude').val(),
+            longitude: $('#txtLongitude').val()
+        },
+        success: function(result) {
+            console.log(JSON.stringify(result));
+            if (result.status.name == "ok") {
+                $('#txtOcean').html(result['data']['ocean']['name']);
+                $('#txtDistance').html(result['data']['distance']);
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+           
         }
-    
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-    }
-}); 
+    });
 });
+
 
 $('#btnRun2').click(function() {
     $.ajax({
