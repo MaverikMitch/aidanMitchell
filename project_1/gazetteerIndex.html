@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gazetteer - Explore Countries</title>
+  <!--Style Sheets-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+  <link rel="stylesheet" href="libs/css/gazetteerStyleSheet.css">
+  <!--Scripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="libs/js/gazetteerJavascript.js"></script>
+</head>
+
+<body>
+  <header>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Gazetteer</a>
+        <div class="ml-auto">
+          <div class="form-inline">
+            <select class="form-control mr-sm-2" id="countrySelect">
+              <option value="">Select a country</option>
+              <option value="current">Current Location</option>
+            </select>
+            <button class="btn btn-primary" id="submitButton">Submit</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="map"></div>
+  </main>
+
+  <footer>
+    <!-- Footer with link to github profile -->
+    <p>&copy; GitHub: <a href="https://github.com/maverikmitch">MaverikMitch</a></p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="countryInfoModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Country Information</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- Modal body content goes here -->
+          <!-- Example: Display country details -->
+          <h2>Country Name</h2>
+          <p>Capital: <span id="capital"></span></p>
+          <p>Population: Population Count</p>
+          <p>Area: Area in Square Kilometers</p>
+          <p>Languages: Languages Spoken</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
