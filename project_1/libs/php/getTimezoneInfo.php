@@ -7,11 +7,11 @@ error_reporting(E_ALL);
 
 $executionStartTime = microtime(true);
 
-$lat = $_REQUEST['latitude'];
-$lng = $_REQUEST['longitude'];
-$apiKey = 'c2eaf11327e34886a8858c64b0137a53';
+$latitude = $_REQUEST['lat'];
+$longitude = $_REQUEST['lng'];
+$username = 'maverikmitch';
 
-$url = 'https://api.opencagedata.com/geocode/v1/json?q=' . $lat . '+' . $lng . '&key=' . $apiKey;
+$url = "http://api.geonames.org/timezoneJSON?lat=$latitude&lng=$longitude&username=$username";
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -23,17 +23,19 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 $decode = json_decode($result, true);
-$addressInfo = $decode['results'][0]['components'];
+$timezoneInfo = $decode; // Store the timezone info
 
 $output['status']['code'] = "200";
 $output['status']['name'] = "ok";
 $output['status']['description'] = "success";
 $output['status']['returnedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
 $output['data'] = array(
-    'country' => $addressInfo['country'],
-    'countryCode' => $addressInfo['country_code']
-    // Add more relevant address components if needed
+    'timezoneId' => $timezoneInfo['timezoneId'],
+    'time' => $timezoneInfo['time'],
+    'utcOffset' => $timezoneInfo['gmtOffset']
 );
-header('Content-Type: application/json; charset=UTF-8');
 
+header('Content-Type: application/json; charset=UTF-8');
 echo json_encode($output);
+?>
+

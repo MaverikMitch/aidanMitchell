@@ -1,4 +1,6 @@
 <?php
+require('functions.php');
+
 if (isset($_GET['country'])) {
   $countryCode = $_GET['country'];
 
@@ -15,4 +17,3 @@ if (isset($_GET['country'])) {
   header('Content-Type: application/json');
   echo $response;
 }
-?>
